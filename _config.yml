@@ -14,7 +14,7 @@ description: >-
 baseurl: ""
 
 # Your GitHub repo for this Pages site
-repository: YOUR_USERNAME/YOUR_USERNAME.github.io
+repository: alishashinde/IS-445-DataViz-HW5
 
 open_new_tab: false
 
