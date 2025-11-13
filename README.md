@@ -16,7 +16,7 @@ I loaded the data directly from the provided URL using `pandas.read_csv` in my n
 ## Plot 1 – Top Usage Descriptions by Total Square Footage
 
 <p>
-  <iframe src="/building_usage_bar.html" width="700" height="450" frameborder="0"></iframe>
+  <iframe src="[/building_usage_bar.html](https://github.com/alishashinde29/IS-445-DataViz-HW5/blob/main/building_usage_bar.html)" width="700" height="450" frameborder="0"></iframe>
 </p>
 
 This plot shows the top ten usage descriptions ranked by total building square footage.  
