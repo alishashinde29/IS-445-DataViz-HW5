@@ -11,7 +11,7 @@ description: >-
 
 # If your site is at https://YOUR_USERNAME.github.io , leave baseurl empty.
 # If it is served from a subdirectory like /is445 , set baseurl: "/is445"
-baseurl: ""
+baseurl: "/IS-445-DataViz-HW5"
 
 # Your GitHub repo for this Pages site
 repository: alishashinde/IS-445-DataViz-HW5
