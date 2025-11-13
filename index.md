@@ -15,7 +15,7 @@ The data was imported directly from the public dataset link using `pandas.read_c
 ## Plot 1 — Top Usage Descriptions by Total Square Footage
 
 <p>
-<iframe src="/static/building_usage_bar.html" width="700" height="450" frameborder="0"></iframe>
+<iframe src="{{ site.baseurl }}/building_usage_bar.html" width="700" height="450" frameborder="0"></iframe>
 </p>
 
 The first visualization shows the ten usage description categories with the highest total building square footage.  
@@ -29,7 +29,7 @@ This aggregation helps reveal which types of buildings occupy the most physical 
 ## Plot 2 — Building Size vs Construction Year (Interactive)
 
 <p>
-<iframe src="/static/building_year_size_interactive.html" width="750" height="450" frameborder="0"></iframe>
+<iframe src="{{ site.baseurl }}/building_year_size_interactive.html" width="750" height="450" frameborder="0"></iframe>
 </p>
 
 The second visualization examines how building size relates to construction year, with an interactive dropdown that filters the scatterplot by usage description.  
