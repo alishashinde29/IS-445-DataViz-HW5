@@ -7,52 +7,44 @@ permalink: /building-inventory/
 
 ## Dataset
 
-For this assignment I used the State of Illinois building inventory dataset.  
-It contains information about public buildings, including the agency, location name, city, square footage, year constructed, and several usage description fields.  
-I loaded the data directly from the provided URL using `pandas.read_csv` in my notebook.
+This project uses the Illinois Building Inventory dataset, which contains information about state-owned buildings including their location, agency, square footage, construction year, and various usage description fields.  
+The data was imported directly from the public dataset link using `pandas.read_csv()` in the analysis notebook.
 
 ---
 
-## Plot 1 – Top Usage Descriptions by Total Square Footage
+## Plot 1 — Top Usage Descriptions by Total Square Footage
 
 <p>
-  <iframe src="/building_usage_bar.html" width="700" height="450" frameborder="0"></iframe>
+<iframe src="/static/building_usage_bar.html" width="700" height="450" frameborder="0"></iframe>
 </p>
 
-This plot shows the top ten usage descriptions ranked by total building square footage.  
-The x-axis encodes total square footage as a quantitative variable, and the y-axis encodes usage description as a nominal category.  
-I used a bar mark because it makes it easy to compare total space across categories.  
-Each bar is colored by usage description, but I turned off the legend since the category names already appear on the y-axis and the colors are mostly decorative.
-
-On the data side, I first dropped rows with missing values for “Square Footage” or “Usage Description”.  
-Then I grouped by “Usage Description”, summed the “Square Footage” column, sorted the results in descending order, and kept the ten largest categories.  
-This aggregation highlights which types of buildings occupy the most physical space in the inventory and smooths out noise from individual buildings.
+The first visualization shows the ten usage description categories with the highest total building square footage.  
+The x-axis encodes the total square footage for each category, while the y-axis lists the usage descriptions sorted in descending order.  
+I used a bar chart because it clearly shows comparisons between categories.  
+Before plotting, I removed rows missing values for “Square Footage” or “Usage Description”, grouped by “Usage Description”, summed the square footage, and selected the top ten categories.  
+This aggregation helps reveal which types of buildings occupy the most physical space within the state inventory.
 
 ---
 
-## Plot 2 – Building Size vs. Construction Year (Interactive)
+## Plot 2 — Building Size vs Construction Year (Interactive)
 
 <p>
-  <iframe src="/building_year_size_interactive.html" width="750" height="450" frameborder="0"></iframe>
+<iframe src="/static/building_year_size_interactive.html" width="750" height="450" frameborder="0"></iframe>
 </p>
 
-The second plot explores how building size relates to construction year for different usage descriptions.  
-The x-axis encodes the year constructed as a quantitative variable, and the y-axis encodes square footage.  
-Each point represents a single building.  
-The color is based on the “Usage Description” field (although only one usage is shown at a time), and the tooltips display the location name, agency name, city, construction year, and square footage so the viewer can inspect individual buildings.
+The second visualization examines how building size relates to construction year, with an interactive dropdown that filters the scatterplot by usage description.  
+Each point represents a building, with the x-axis showing the construction year and the y-axis showing the building’s square footage.  
+Tooltips display additional details such as agency, location name, city, and square footage.
 
-In the notebook, I dropped rows where “Square Footage”, “Usage Description”, or “Year Constructed” were missing.  
-I converted “Year Constructed” to integers and kept only buildings from 1900 onwards to avoid obvious outliers or bad values.  
-This cleaned table is used as the source for the scatter plot.
+On the data side, I removed rows missing “Year Constructed”, “Square Footage”, or “Usage Description”, converted construction years into integers, and filtered out years before 1900 to remove errors and outliers.
 
-For interactivity, I created a dropdown menu bound to a parameter representing the chosen usage description.  
-The chart uses this parameter in a filter expression so that only buildings whose “Usage Description” matches the current dropdown value are displayed.  
-This interaction makes the visualization clearer because the full dataset has many different usage types; showing everything at once would create a dense cloud of points.  
-By focusing on one usage at a time, it is easier to see whether buildings of that type tend to be older or newer and whether they are typically larger or smaller.
+For interactivity, I created a dropdown menu using an Altair parameter bound to the “Usage Description” column.  
+The plot updates dynamically through a filter expression that selects only buildings matching the chosen category.  
+This interactivity reduces visual clutter and allows viewers to focus on trends within a single usage type — such as whether older buildings for that use tend to be larger or smaller.
 
 ---
 
 ## Links
 
 - [The Data](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/README.csv)  
-- [The Analysis Notebook](Workbook.ipynb.ipynb)
+- [The Analysis Notebook](https://github.com/alishashinde29/IS-445-DataViz-HW5/blob/main/WorkbookHW.ipynb)
